@@ -6,20 +6,11 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm \
-	nss            \
-	nspr		   \
-	pipewire-audio \
-	pipewire-jack
+pacman -Syu --noconfirm pipewire-audio pipewire-jack
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
-
-# Comment this out if you need an AUR package
-#make-aur-package
-
-# If the application needs to be manually built that has to be done down here
 
 echo "Getting app..."
 echo "---------------------------------------------------------------"
@@ -41,5 +32,4 @@ tar -xvf ./data.tar.xz
 rm -f ./*.xz
 rm -rf ./usr/share/doc
 mv -v ./opt/FreeTube/* ./AppDir/bin
-cp ./usr/share/icons/hicolor/scalable/apps/freetube.svg ./AppDir/.DirIcon
-mv -v ./usr/share/icons/hicolor/scalable/apps/freetube.svg ./usr/share/applications/freetube.desktop ./AppDir
+mv -v ./usr/share/applications/freetube.desktop ./AppDir
