@@ -34,5 +34,4 @@ tar -xvf ./data.tar.xz
 rm -f ./*.xz
 rm -rf ./usr/share/doc
 mv -v ./opt/FreeTube/* ./AppDir/bin
-cp ./usr/share/icons/hicolor/scalable/apps/freetube.svg ./AppDir/.DirIcon
-mv -v ./usr/share/icons/hicolor/scalable/apps/freetube.svg ./usr/share/applications/freetube.desktop ./AppDir
+mv -v ./usr/share/applications/freetube.desktop ./AppDir
